@@ -4,7 +4,7 @@ import os
 
 # Load your pre-trained TensorFlow model
 # current_directory = os.getcwd()
-model_path = "./vedavision_densenetv3.h5"
+model_path = "vedavision_densenetv3.h5"
 
 model = tf.keras.models.load_model(model_path)
 
