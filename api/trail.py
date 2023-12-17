@@ -1,8 +1,11 @@
 import tensorflow as tf
 import numpy as np
+import os
 
 # Load your pre-trained TensorFlow model
-model_path = './vedavision_densenetv3.h5'
+current_directory = os.getcwd()
+model_path = os.path.join(current_directory, "vedavision_densenetv3.h5")
+
 model = tf.keras.models.load_model(model_path)
 
 # Define the image preprocessing function
