@@ -3,8 +3,10 @@ import numpy as np
 import os
 
 # Load your pre-trained TensorFlow model
-# current_directory = os.getcwd()
+current_directory = os.getcwd()
 model_path = "vedavision_densenetv3.h5"
+model_path = os.path.join(current_directory, model_path)
+# print(model_path)
 
 model = tf.keras.models.load_model(model_path)
 
@@ -15,7 +17,7 @@ model = tf.keras.models.load_model(model_path)
 def getPlant(preprocessed_image):
     predictions = model.predict(preprocessed_image)
 
-    file_path = "./PlantsNameSeq1.txt"
+    file_path = os.path.join(current_directory, "PlantsNameSeq1.txt")
 
     # Open the file in read mode
     plant_list = []
